@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <dialog data-modal>
+        <form action="#" id="new-book">
+          <div class="form-head">
+            <h2>New Book</h2>
+            <button data-close-modal type="close" class="btn-close">
+              <svg class="close">
+                <use href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex-cl">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required />
+            <span data-title-error class="error"></span>
+          </div>
+          <div class="flex-cl">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required />
+            <span data-author-error class="error"></span>
+          </div>
+          <div class="flex-cl">
+            <label for="pages">Number of pages</label>
+            <input type="text" id="pages" name="pages" required />
+            <span data-pages-error class="error"></span>
+          </div>
+          <div class="toggle">
+            <label for="read">Read</label>
+            <label class="switch">
+              <input type="checkbox" id="read" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <button data-submit-modal type="submit" class="add-btn">Add</button>
+        </form>
+      </dialog>
+      <header>
+        <div class="header-text">
+          <h1>Book Manager</h1>
+          <p>Start organizing your books now!</p>
+          <button data-open-modal type="button" class="add-btn">
+            <span
+              ><svg><use href="img/sprite.svg#icon-plus"></use></svg>Add
+              Book</span
+            >
+          </button>
+        </div>
+        <img src="img/Reading glasses-rafiki.png" alt="Book loving man" />
+      </header>
+      <section class="table-container">
+        <div class="table">
+          <table id="bookTable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

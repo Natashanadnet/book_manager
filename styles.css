@@ -1,0 +1,382 @@
+/* VARIABLES */
+:root {
+  --color-light: #fff;
+  --color-medium: #93c5fd;
+  --color-accent: #3b82f6;
+  --color-grey-extra-light: #e5e5e5;
+  --color-grey-light: #737373;
+  --color-grey-dark: #404040;
+  --color-black: #0a0a0a;
+
+  --font-family: "Poppins", sans-serif;
+}
+
+/* RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Make rem calculations easier*/
+html {
+  font-size: 10px;
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* START OF STYLING */
+.container {
+  display: grid;
+  grid-template-rows: 2fr 5fr;
+  position: relative;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 10;
+  gap: 20rem;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header-text h1 {
+  font-size: 7rem;
+  font-weight: 500;
+  z-index: 2;
+  position: relative;
+}
+
+.header-text h1::before {
+  content: "";
+  display: block;
+  background-color: var(--color-medium);
+  width: 100%;
+  height: 3rem;
+  z-index: -1;
+  position: absolute;
+  top: 6rem;
+}
+
+.header-text p {
+  font-size: 2rem;
+  font-weight: 500;
+  align-self: center;
+  justify-self: center;
+}
+
+img {
+  max-width: 25%;
+  height: auto;
+}
+
+svg {
+  height: 4rem;
+  width: 4rem;
+  fill: var(--color-light);
+}
+span {
+  display: flex;
+  align-items: center;
+}
+
+.add-btn {
+  background-color: var(--color-accent);
+  border: none;
+  font-size: 2.5rem;
+  color: var(--color-light);
+  font-weight: 500;
+  border-radius: 50px;
+  justify-self: center;
+  align-self: center;
+  padding: 1rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.table-container {
+  background-color: var(--color-grey-extra-light);
+}
+
+dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 50%;
+  min-width: 30%;
+  border: none;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+form {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+input {
+  outline: none;
+  width: 35rem;
+  height: 3rem;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--color-grey-extra-light);
+  padding: 1rem;
+}
+
+input:focus {
+  border: 1px solid var(--color-accent);
+}
+
+input:valid {
+  background-color: var(--color-medium);
+}
+
+input:invalid {
+  background-color: rgb(204, 165, 165);
+}
+
+.form-head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+dialog h2 {
+  font-size: 5rem;
+  font-weight: 500;
+  grid-column: 2 / span 1;
+  justify-self: center;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  align-self: start;
+  justify-self: end;
+}
+
+.close {
+  height: 3.5rem;
+  width: 3.5rem;
+  fill: var(--color-accent);
+  grid-column: 3/-1;
+}
+
+dialog::backdrop {
+  background-color: hsla(206, 71%, 53%, 0.409);
+}
+
+.toggle {
+  display: flex;
+  gap: 2rem;
+}
+
+.error {
+  color: red;
+  font-size: 1.5rem;
+}
+
+.table {
+  margin-inline: auto;
+  width: 100%;
+}
+
+table {
+  background-color: var(--color-light);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  font-size: 2.5rem;
+}
+th,
+td {
+  padding: 1rem;
+  text-align: center;
+}
+
+td {
+  font-size: 2rem;
+}
+
+tr:nth-of-type(2n) {
+  background-color: var(--color-medium);
+}
+
+.toggle-table {
+  display: grid;
+  place-content: center;
+}
+
+.delete-btn {
+  background-color: var(--color-accent);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  color: var(--color-grey-extra-light);
+}
+
+.hidden {
+  display: none;
+}
+
+/* SLIDER */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(224, 164, 164);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  color: red;
+  text-align: center;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--color-light);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-accent);
+}
+
+input:checked + .slider:before {
+  content: "✔";
+  text-align: center;
+  color: var(--color-accent);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* UTILITIES */
+.flex-cl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
